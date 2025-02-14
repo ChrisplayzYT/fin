@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+  <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="" crossorigin="anonymous">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="" crossorigin="anonymous"></script>
+<style>
+  /* If it works, then it works. Don't touch it, and don't touch... me? */
+
+:root {
+    --alert-padding: .75rem 1.25rem;
+    --alert-border-radius: .25rem;
+    --font-family: monospace;
+    --rsc-blue-rgb: 0, 123, 255;
+    --icon-color-light: #000;
+    --icon-color-dark: #fff;
+}
+
+@keyframes bgmove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #101010;
+    background-image: url("/fin/pattern3.png");
+    background-size: auto;
+    background-repeat: repeat;
+    animation: bgmove 100s linear infinite;
+}
+
+@media (max-width: 576px) {
+  .card-img-top {
+    width: 10%;
+    height: auto;
+  }
+}
+.wiialert {
+    display: none;
+    position: absolute;
+    width: 450px;
+}
+
+@media (min-width: 576px) {
+    .wiialert {
+        display: block;
+    }
+}
+
+.btn-halfwhite {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.btn-halfwhite:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.rsc-dropdown .dropdown-toggle:focus:not(:focus-visible) {
+    outline: 0;
+}
+.rsc-dropdown .dropdown-menu {
+    --bs-dropdown-padding-x: .25rem;
+    --bs-dropdown-padding-y: .25rem;
+    --bs-dropdown-link-hover-bg: rgba(var(--rsc-blue-rgb), .1);
+    --bs-dropdown-link-active-bg: rgba(var(--rsc-blue-rgb), 1);
+    --bs-dropdown-font-size: .875rem;
+    font-size: .875rem;
+    border-radius: .5rem;
+}
+.rsc-dropdown .dropdown-menu li+li {
+    margin-top: .125rem;
+}
+.rsc-dropdown .dropdown-menu .dropdown-item {
+    border-radius: .25rem;
+}
+.rsc-dropdown .dropdown-menu .dropdown-item:active .bi {
+    color: inherit !important;
+}
+.rsc-dropdown .dropdown-menu .active {
+    font-weight: 600;
+}
+.rsc-dropdown .dropdown-menu .active .bi {
+    display: block !important;
+}
+.rsc-dropdown .dropdown-menu-end {
+    --bs-dropdown-min-width: 8rem;
+}
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+.segoeui {
+    font-family: Segoe UI Light !important;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.funny {
+    animation: spinning 5s linear infinite;
+}
+
+.funny:hover {
+    animation-duration: 0.05s;
+}
+
+[data-bs-theme="light"] {
+  --alert-primary-color: #025177;
+    --alert-primary-bg: #039BE5;
+    --alert-primary-border: #a1daf6;
+    --alert-primary-bg-alt: #039be5;
+    --alert-secondary-color: #383d41;
+    --alert-secondary-bg: #e2e3e5;
+    --alert-secondary-border: #c8cbcf;
+    --alert-success-color: #00602d;
+    --alert-success-bg: #ccf1dd;
+    --alert-success-border: #a4e5c3;
+    --alert-success-bg-alt: #00b857;
+    --alert-info-color: #613668;
+    --alert-info-bg: #f1e1f4;
+    --alert-info-border: #e4c2e9;
+    --alert-info-bg-alt: #ba68c8;
+    --alert-warning-color: #855d00;
+    --alert-warning-bg: #fff0cc;
+    --alert-warning-border: #ffe29f;
+    --alert-warning-bg-alt: #ffb300;
+    --alert-danger-color: #761b18;
+    --alert-danger-bg: #f9d6d5;
+    --alert-danger-border: #f4b0af;
+    --alert-danger-bg-alt: #e3342f;
+    --alert-link-color: #fff;
+    --rsc-blue-rgb: 0, 169, 231;
+    background-color: #000;
+    color: #fff;
+}
+
+[data-bs-theme="dark"] {
+    --alert-primary-color: #025177;
+    --alert-primary-bg: #039BE5;
+    --alert-primary-border: #a1daf6;
+    --alert-primary-bg-alt: #039be5;
+    --alert-secondary-color: #383d41;
+    --alert-secondary-bg: #e2e3e5;
+    --alert-secondary-border: #c8cbcf;
+    --alert-success-color: #00602d;
+    --alert-success-bg: #ccf1dd;
+    --alert-success-border: #a4e5c3;
+    --alert-success-bg-alt: #00b857;
+    --alert-info-color: #613668;
+    --alert-info-bg: #f1e1f4;
+    --alert-info-border: #e4c2e9;
+    --alert-info-bg-alt: #ba68c8;
+    --alert-warning-color: #855d00;
+    --alert-warning-bg: #fff0cc;
+    --alert-warning-border: #ffe29f;
+    --alert-warning-bg-alt: #ffb300;
+    --alert-danger-color: #761b18;
+    --alert-danger-bg: #f9d6d5;
+    --alert-danger-border: #f4b0af;
+    --alert-danger-bg-alt: #e3342f;
+    --alert-link-color: #fff;
+    --rsc-blue-rgb: 0, 169, 231;
+    background-color: #000;
+    color: #fff;
+}
+
+.card, .list-group-item, .form-control, .bg-rsc {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+[data-bs-theme="dark"] .card, [data-bs-theme="dark"] .list-group-item, [data-bs-theme="dark"] .form-control, [data-bs-theme="dark"] .bg-rsc {
+    background-color: rgba(250, 250, 250, 0.02) !important;
+    backdrop-filter: blur(2px);
+}
+
+.alert {
+    position: relative;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: var(--alert-border-radius);
+    padding: var(--alert-padding);
+}
+
+.alert-primary {
+    color: var(--alert-primary-color);
+    background: var(--alert-primary-bg-alt);
+}
+
+.alert-secondary {
+    color: var(--alert-secondary-color);
+    background-color: var(--alert-secondary-bg);
+    border-top-color: var(--alert-secondary-border);
+}
+
+.alert-success {
+    color: var(--alert-success-color);
+    background: var(--alert-success-bg-alt);
+}
+
+.alert-info {
+    color: var(--alert-info-color);
+    background: var(--alert-info-bg-alt);
+}
+
+.alert-warning {
+    color: var(--alert-warning-color);
+    background: var(--alert-warning-bg-alt);
+}
+
+.alert-danger {
+    color: var(--alert-danger-color);
+    background: var(--alert-danger-bg-alt);
+}
+
+.alert a, .alert a:link {
+    color: var(--alert-link-color);
+    text-decoration: underline;
+}
+
+.secondary {
+    font-family: var(--font-family);
+}
+
+[data-bs-theme="light"] .tag {
+    background-color: rgba(240, 240, 240, 0.8);
+}
+
+[data-bs-theme="dark"] .tag {
+    background-color: rgba(27, 27, 27, 0.8);
+}
+
+[data-bs-theme="light"] .media-icons a {
+  color: var(--icon-color-dark);
+}
+
+[data-bs-theme="dark"] .media-icons a {
+    color: var(--icon-color-dark);
+}
+
+@media (min-width:992px) {
+    .page-container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    .page-sidenav {
+        display: block !important;
+    }
+}
+
+.padding {
+    padding: 2rem;
+}
+
+.w-32 {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: .85em;
+}
+
+.circle {
+    border-radius: 500px;
+}
+
+.gd-warning {
+    color: #fff;
+    border: none;
+    background: #f4c414 linear-gradient(45deg, #f4c414, #f45414);
+}
+
+.timeline {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.block {
+    border-width: 0;
+    border-radius: .25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+    margin-bottom: 1.5rem;
+}
+
+.tl-item {
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+}
+
+.tl-item>* {
+    padding: 10px;
+}
+
+.tl-item .avatar {
+    z-index: 2;
+}
+
+.tl-dot {
+    position: relative;
+    border-color: rgba(160, 175, 185, .15);
+}
+
+.tl-dot:after,
+.tl-dot:before {
+    content: '';
+    position: absolute;
+    border-color: inherit;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tl-dot:after {
+    width: 0;
+    height: auto;
+    top: 25px;
+    bottom: -15px;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-radius: 0;
+}
+
+.tl-item.active .tl-dot:before {
+    box-shadow: 0 0 0 4px rgba(25, 135, 84, .2);
+}
+
+.tl-item:last-child .tl-dot:after {
+    display: none;
+}
+
+.tl-content p:last-child {
+    margin-bottom: 0;
+}
+
+.tl-date {
+    font-size: .85em;
+    margin-top: 2px;
+    min-width: 100px;
+}
+
+.avatar {
+    position: relative;
+    line-height: 1;
+    border-radius: 500px;
+    white-space: nowrap;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 0 5px 10px 0 rgba(50, 50, 50, .15);
+}
+
+.b-rev1 {
+    border-color: #0D6EFD !important;
+}
+
+.b-rev2 {
+    border-color: #520DC2 !important;
+}
+
+.b-rev3 {
+    border-color: #59359A !important;
+}
+
+.b-rev4 {
+    border-color: #DE5C9D !important;
+}
+
+.b-rev5 {
+    border-color: #B02A37 !important;
+}
+
+.b-rev6 {
+    border-color: #FD7E14 !important;
+}
+.b-rev7 {
+    border-color: #198754 !important;
+}
+
+.custom-tabs {
+    height: 40px;
+    border-radius: .25rem;
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.custom-tabs > .tab {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4px;
+}
+
+.custom-tabs > .tab:first-child {
+    border-top-left-radius: .25rem;
+}
+
+.custom-tabs > .tab:last-child {
+    border-top-right-radius: .25rem;
+}
+
+.custom-tabs > .tab.active {
+    border-bottom: 4px solid #039be5;
+    padding-bottom: 0;
+}
+
+.custom-tabs > .tab:not(.active):hover {
+    border-bottom: 4px solid #ccc;
+    padding-bottom: 0;
+}
+
+.custom-tabs-card {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.custom-tabs > .tab {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+[data-bs-theme="dark"] .custom-tabs > .tab {
+    color: white;
+}
+
+[data-bs-theme="light"] .custom-tabs > .tab {
+    color: dark;
+}
+nav .container {
+    width:100%
+}
+
+nav.navbar.navbar-light.bg-norm.navbar-static-top {
+    border-bottom:1px solid hsla(0,0%,100%,.1)
+}
+        .navbar-brand{font-size:1rem}
+
+
+/*
+     FILE ARCHIVED ON 12:41:42 Sep 22, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 20:50:09 Feb 14, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.521
+  exclusion.robots: 0.019
+  exclusion.robots.policy: 0.008
+  esindex: 0.012
+  cdx.remote: 7.085
+  LoadShardBlock: 388.938 (3)
+  PetaboxLoader3.datanode: 151.094 (4)
+  PetaboxLoader3.resolve: 303.357 (2)
+  load_resource: 164.236
+*/
+</style>
+</head>
+<body>
+  
+</body>
+</html>
+
+<main class="d-flex flex-column justify-content-center align-items-center vh-100">
+  <div class="container row justify-content-center align-items-center text-center">
+    <div class="col-md-6 py-4">
+      <img src="/fin/fintuber.png" loading="lazy" width="180" class="funny">
+      <br><br>
+                <div class="text-start">
+          <div class="col-md-8 offset-md-2">
+                  <a href="https://ftolnks.xyz" target="_blank" class="text-decoration-none text-dark">
+                      <div class="card h-100">
+                          <div class="card-body">
+                              <h5 class="card-title">Deal with it...me?</h5>
+                              <p class="card-text m-0"><small class="text-muted">
+                                <i class="fa-regular fa-user"></i> fin | <i class="fa-regular fa-calendar"></i> October 27, 2024</small></p>
+                          </div>
+                      </div>
+                  </a>
+                </div>
+            </div>
+    </div>
+    <div class="col-md-6 py-4 border-lg-start text-start" style="color:#Fff;">
+      <h3 class="fw-semibold"><i class="em em-wave"></i> Hey there, fin here.</h3>
+      <p><i class="fa-brands fa-discord"></i> @ennaw | <i class="fa-brands fa-x-twitter"></i> <a class="text-light" href="https://web.archive.org/web/20241223220100/https://x.com/PopTartWii">@PopTartWii</a></p>
+      <p class="pe-md-5">
+        I am a software &amp; full stack developer that codes in <span class="fw-bold">PHP</span>, a terrible terrible therapist, and a designer.
+      </p>
+      <a href="https://chrisplayzyt.github.io/404" class="btn btn-warning"><i class="fa-regular fa-user"></i> More about me</a>
+      <a href="https://chrisplayzyt.github.io/404" class="btn btn-success"><i class="fa-duotone fa-newspaper"></i> Blog</a>  
+      <hr>
+      <h4 class="fw-semibold">DNI List</h4>
+      <ul>
+        <li> if you're a pedo </li>
+        <li> if you're a zoophile </li>
+        <li> if you're <a href="https://chrisplayzyt.github.io/404">luciasfeliz</a> <span class="text-muted">/j</span> </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</main>
